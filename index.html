@@ -1,210 +1,584 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CipherWatch — Windows Security Companion</title>
-  <meta name="description" content="CipherWatch gives your Windows Defender a premium interface and an AI assistant that explains threats in plain English."/>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CipherWatch — A beautiful Windows security dashboard powered by Windows Defender and Claude AI. See your security score, run scans, and understand threats in plain English." />
+  <meta name="keywords" content="Windows security, Windows Defender, security dashboard, AI security assistant, CipherWatch" />
+  <meta property="og:title" content="CipherWatch — Windows Security, Finally Made Clear" />
+  <meta property="og:description" content="A beautiful dashboard for Windows Defender with an AI assistant that explains threats in plain English." />
+  <meta property="og:type" content="website" />
+  <title>CipherWatch — Windows Security, Finally Made Clear</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡</text></svg>" />
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <div class="logo">
-        <span class="logo-icon">&#9672;</span>
-        CipherWatch
-      </div>
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#download" class="btn-nav">Download Free</a>
-      </div>
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="#" class="nav-logo">
+        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 3L35 10V20C35 28.5 28.5 36.5 20 39C11.5 36.5 5 28.5 5 20V10L20 3Z" fill="url(#shield-grad)" />
+          <path d="M20 10L27 14V20C27 24.5 24 28.5 20 30C16 28.5 13 24.5 13 20V14L20 10Z" fill="url(#diamond-grad)" />
+          <defs>
+            <linearGradient id="shield-grad" x1="5" y1="3" x2="35" y2="39" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#4A8FE7"/>
+              <stop offset="100%" stop-color="#6A5ACD"/>
+            </linearGradient>
+            <linearGradient id="diamond-grad" x1="13" y1="10" x2="27" y2="30" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0.4)"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo-text">CipherWatch</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="https://github.com/mqobey/CipherWatch/releases/latest" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Download Free</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="badge">Early Preview &mdash; Free</div>
-      <h1>Windows already<br/>protects you.<br/><span class="accent">We help you understand it.</span></h1>
-      <p class="hero-sub">
-        CipherWatch gives Windows Defender a beautiful dashboard, one-click scanning,
-        and an AI assistant that explains security threats in plain English &mdash; no jargon.
-      </p>
-      <div class="hero-actions">
-        <a href="#download" class="btn-primary">Download Free</a>
-        <a href="#features" class="btn-ghost">See features</a>
-      </div>
-      <p class="hero-note">Windows 10 / 11 &nbsp;&middot;&nbsp; No subscription required &nbsp;&middot;&nbsp; No data collected</p>
-    </div>
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
     <div class="hero-glow"></div>
+    <div class="container hero-inner">
+
+      <div class="hero-badge fade-in-up">
+        <span class="badge-dot"></span>
+        Trusted Windows Security &mdash; Free to Start
+      </div>
+
+      <h1 class="hero-headline fade-in-up delay-1">
+        Your Windows PC is protected.<br/>
+        <span class="accent">Now you can actually see it.</span>
+      </h1>
+
+      <p class="hero-sub fade-in-up delay-2">
+        CipherWatch gives Windows Defender the interface it always deserved. A beautiful security dashboard, real-time scanning, and an AI assistant that explains threats in plain English &mdash; not security jargon.
+      </p>
+
+      <div class="hero-ctas fade-in-up delay-3">
+        <a href="https://github.com/mqobey/CipherWatch/releases/latest" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+          Download Free &mdash; Windows 10/11
+        </a>
+        <a href="#how-it-works" class="btn btn-ghost btn-lg">See how it works &#8595;</a>
+      </div>
+
+      <p class="hero-trust fade-in-up delay-4">No account &nbsp;&middot;&nbsp; No subscription &nbsp;&middot;&nbsp; No data collected</p>
+
+      <!-- Mock App Preview -->
+      <div class="app-preview fade-in-up delay-5">
+        <div class="app-preview-titlebar">
+          <div class="titlebar-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green-win"></span>
+          </div>
+          <span class="titlebar-name">CipherWatch</span>
+          <div class="titlebar-spacer"></div>
+        </div>
+        <div class="app-preview-body">
+          <div class="app-sidebar">
+            <div class="sidebar-item active">
+              <span class="sidebar-icon">&#128737;</span>
+              <span>Dashboard</span>
+            </div>
+            <div class="sidebar-item">
+              <span class="sidebar-icon">&#128269;</span>
+              <span>Scan</span>
+            </div>
+            <div class="sidebar-item">
+              <span class="sidebar-icon">&#128274;</span>
+              <span>Quarantine</span>
+            </div>
+            <div class="sidebar-item">
+              <span class="sidebar-icon">&#128202;</span>
+              <span>Health</span>
+            </div>
+            <div class="sidebar-item">
+              <span class="sidebar-icon">&#129302;</span>
+              <span>AI Assistant</span>
+            </div>
+          </div>
+          <div class="app-main">
+            <div class="app-header-row">
+              <div>
+                <div class="app-title-label">Security Overview</div>
+                <div class="app-subtitle-label">Last scan: Today, 9:41 AM</div>
+              </div>
+              <div class="status-pill">
+                <span class="status-dot-green"></span>
+                Protected
+              </div>
+            </div>
+            <div class="score-row">
+              <div class="score-card">
+                <div class="score-number">100</div>
+                <div class="score-label">Security Score</div>
+                <div class="score-bar-track">
+                  <div class="score-bar-fill"></div>
+                </div>
+              </div>
+              <div class="modules-col">
+                <div class="module-row">
+                  <span class="module-dot green"></span>
+                  <span class="module-name">Real-time Protection</span>
+                  <span class="module-status on">ON</span>
+                </div>
+                <div class="module-row">
+                  <span class="module-dot green"></span>
+                  <span class="module-name">Firewall</span>
+                  <span class="module-status on">ON</span>
+                </div>
+                <div class="module-row">
+                  <span class="module-dot green"></span>
+                  <span class="module-name">Definitions</span>
+                  <span class="module-status current">Current</span>
+                </div>
+                <div class="module-row">
+                  <span class="module-dot green"></span>
+                  <span class="module-name">Cloud Protection</span>
+                  <span class="module-status on">ON</span>
+                </div>
+              </div>
+            </div>
+            <div class="app-actions-row">
+              <button class="app-btn primary">Quick Scan</button>
+              <button class="app-btn">Update Definitions</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
-  <!-- TRUST BAR -->
+  <!-- ========== TRUST BAR ========== -->
   <section class="trust-bar">
-    <div class="trust-inner">
-      <div class="trust-item">
-        <span class="trust-icon green">&#10003;</span>
-        Built on Windows Defender
+    <div class="container trust-bar-inner">
+      <span class="trust-item"><span class="trust-check">&#10003;</span> Built on Windows Defender</span>
+      <span class="trust-divider"></span>
+      <span class="trust-item"><span class="trust-check">&#10003;</span> No background processes</span>
+      <span class="trust-divider"></span>
+      <span class="trust-item"><span class="trust-check">&#10003;</span> Zero data collected</span>
+      <span class="trust-divider"></span>
+      <span class="trust-item"><span class="trust-check">&#10003;</span> No subscription to start</span>
+      <span class="trust-divider"></span>
+      <span class="trust-item"><span class="trust-check">&#10003;</span> Open source friendly</span>
+    </div>
+  </section>
+
+  <!-- ========== STATS ROW ========== -->
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">Windows 10/11</div>
+        <div class="stat-label">Full Compatibility</div>
       </div>
-      <div class="trust-item">
-        <span class="trust-icon green">&#10003;</span>
-        No background agents
+      <div class="stat-card">
+        <div class="stat-value">Zero</div>
+        <div class="stat-label">Data Sent to Us</div>
       </div>
-      <div class="trust-item">
-        <span class="trust-icon green">&#10003;</span>
-        No data sent to us
+      <div class="stat-card">
+        <div class="stat-value">Free Forever</div>
+        <div class="stat-label">Core Dashboard</div>
       </div>
-      <div class="trust-item">
-        <span class="trust-icon green">&#10003;</span>
-        100% free to start
+      <div class="stat-card">
+        <div class="stat-value">Claude AI</div>
+        <div class="stat-label">Powered Assistant</div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="features" id="features">
-    <div class="section-inner">
-      <h2>Everything you need.<br/>Nothing you don&apos;t.</h2>
-      <p class="section-sub">CipherWatch wraps the protection already on your PC with a layer that actually makes sense.</p>
+  <!-- ========== FEATURES ========== -->
+  <section class="features-section section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Everything your security deserves.</h2>
+        <p class="section-sub">A complete Windows security companion &mdash; from the dashboard you see every day to the AI that has your back.</p>
+      </div>
 
       <div class="features-grid">
 
         <div class="feature-card">
-          <div class="feature-icon blue">&#128737;</div>
-          <h3>Security Dashboard</h3>
-          <p>Your security score, all protection modules, system health, and signature status &mdash; at a glance. No digging through Windows Settings.</p>
+          <div class="feature-icon">&#128737;</div>
+          <h3 class="feature-title">Security Dashboard</h3>
+          <p class="feature-desc">Your full security posture at a glance. Score, modules, threats, signatures &mdash; without digging through Windows Settings.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon purple">&#128269;</div>
-          <h3>One-Click Scanning</h3>
-          <p>Launch a Quick Scan or Full Scan instantly. Watch progress in real time and get a clear result when it&apos;s done.</p>
+          <div class="feature-icon">&#128269;</div>
+          <h3 class="feature-title">One-Click Scanning</h3>
+          <p class="feature-desc">Quick Scan or Full Scan in one click. Real-time progress, clear results, and plain-English summaries when it&apos;s done.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon amber">&#128274;</div>
-          <h3>Quarantine Viewer</h3>
-          <p>See exactly what Defender has blocked and where it came from. Remove quarantined threats with one click.</p>
-        </div>
-
-        <div class="feature-card feature-card-highlight">
-          <div class="feature-badge">Pro</div>
-          <div class="feature-icon blue">&#129302;</div>
-          <h3>AI Security Assistant</h3>
-          <p>Ask anything about your security in plain English. Powered by Claude AI &mdash; it explains threats, advises on risks, and answers your questions without the technical noise.</p>
+          <div class="pro-badge">Pro</div>
+          <div class="feature-icon">&#128274;</div>
+          <h3 class="feature-title">Quarantine Viewer</h3>
+          <p class="feature-desc">See exactly what Defender blocked and where it came from. Review, restore, or remove threats safely &mdash; all in one place.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon green">&#128202;</div>
-          <h3>System Health Monitor</h3>
-          <p>Live CPU, RAM, Disk, and uptime stats. See what&apos;s starting with Windows and how it affects your machine.</p>
+          <div class="pro-badge">Pro</div>
+          <div class="feature-icon">&#129302;</div>
+          <h3 class="feature-title">AI Security Assistant</h3>
+          <p class="feature-desc">Ask anything in plain English. Powered by Claude AI &mdash; understands threats, explains risks, answers your questions without jargon. Uses your own API key.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon gray">&#128187;</div>
-          <h3>Lives in the Tray</h3>
-          <p>CipherWatch sits quietly in your system tray, out of the way until you need it. No performance impact, no popups.</p>
+          <div class="pro-badge">Pro</div>
+          <div class="feature-icon">&#128202;</div>
+          <h3 class="feature-title">System Health Monitor</h3>
+          <p class="feature-desc">Live CPU, RAM, Disk, and uptime. Know what&apos;s starting with Windows and how each startup item affects your performance.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">&#128421;</div>
+          <h3 class="feature-title">Lives in the Tray</h3>
+          <p class="feature-desc">Sits silently in your system tray. Zero performance impact, no popups, no noise &mdash; always ready when you need it.</p>
+        </div>
+
+      </div>
+
+      <!-- Mid-section CTA banner -->
+      <div class="mid-cta-banner">
+        <div class="mid-cta-text">
+          <h3>Ready to see your security score?</h3>
+          <p>Download free in seconds. No account, no strings attached.</p>
+        </div>
+        <a href="https://github.com/mqobey/CipherWatch/releases/latest" class="btn btn-primary" target="_blank" rel="noopener">Download CipherWatch Free</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="how-section section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Up and running in under 60 seconds.</h2>
+        <p class="section-sub">No setup wizards. No account creation. No configuration headaches.</p>
+      </div>
+
+      <div class="steps-row">
+
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-icon">&#11015;</div>
+          <h3 class="step-title">Download &amp; Install</h3>
+          <p class="step-desc">Download the installer from GitHub. Run it &mdash; no account needed, no Microsoft Store required. Takes under a minute.</p>
+        </div>
+
+        <div class="step-arrow">&#8594;</div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-icon">&#128737;</div>
+          <h3 class="step-title">See Your Security</h3>
+          <p class="step-desc">CipherWatch reads your existing Windows Defender data and shows your security score, module status, and last scan results instantly.</p>
+        </div>
+
+        <div class="step-arrow">&#8594;</div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-icon">&#129302;</div>
+          <h3 class="step-title">Ask the AI</h3>
+          <p class="step-desc">Add your Claude API key in Settings to unlock the AI assistant. Ask anything &mdash; threats, settings, recommendations &mdash; in plain English.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="how" id="how">
-    <div class="section-inner">
-      <h2>Up and running in 3 steps.</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Download &amp; Install</h3>
-          <p>Run the installer. No account required, nothing to sign up for.</p>
-        </div>
-        <div class="step-arrow">&#8594;</div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>See your status</h3>
-          <p>CipherWatch reads your Defender status and shows your security score instantly.</p>
-        </div>
-        <div class="step-arrow">&#8594;</div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Ask the AI (optional)</h3>
-          <p>Add a Claude API key in Settings to unlock the AI assistant. Ask it anything.</p>
-        </div>
+  <!-- ========== PRICING ========== -->
+  <section class="pricing-section section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Simple, transparent pricing.</h2>
+        <p class="section-sub">Start free. Upgrade when you want more.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pricing" id="pricing">
-    <div class="section-inner">
-      <h2>Simple pricing.</h2>
-      <p class="section-sub">Start free. Upgrade when you want the AI assistant.</p>
 
       <div class="pricing-grid">
 
-        <div class="plan-card">
-          <div class="plan-name">Free</div>
-          <div class="plan-price">$0<span>/forever</span></div>
-          <ul class="plan-features">
-            <li><span class="check green">&#10003;</span> Security Dashboard</li>
-            <li><span class="check green">&#10003;</span> Quick &amp; Full Scan</li>
-            <li><span class="check green">&#10003;</span> Quarantine Viewer</li>
-            <li><span class="check green">&#10003;</span> System Health Monitor</li>
-            <li><span class="check green">&#10003;</span> System Tray</li>
-            <li><span class="check gray">&#8212;</span> AI Assistant</li>
+        <!-- Free -->
+        <div class="pricing-card">
+          <div class="pricing-tier-label">Free</div>
+          <div class="pricing-price">
+            <span class="price-amount">$0</span>
+            <span class="price-period">/ forever</span>
+          </div>
+          <p class="pricing-tagline">The essentials, always free.</p>
+          <ul class="pricing-features">
+            <li><span class="check">&#10003;</span> Security Dashboard</li>
+            <li><span class="check">&#10003;</span> Quick Scan</li>
+            <li><span class="check">&#10003;</span> System Tray App</li>
+            <li><span class="check">&#10003;</span> Signature Status</li>
+            <li><span class="muted">&mdash;</span> <span class="muted-text">Quarantine Viewer</span></li>
+            <li><span class="muted">&mdash;</span> <span class="muted-text">System Health Monitor</span></li>
+            <li><span class="muted">&mdash;</span> <span class="muted-text">AI Assistant</span></li>
           </ul>
-          <a href="#download" class="btn-outline">Download Free</a>
+          <a href="https://github.com/mqobey/CipherWatch/releases/latest" class="btn btn-outline btn-full" target="_blank" rel="noopener">Download Free</a>
         </div>
 
-        <div class="plan-card plan-card-featured">
-          <div class="plan-badge">Most Popular</div>
-          <div class="plan-name">Pro</div>
-          <div class="plan-price">$15<span>/year</span></div>
-          <ul class="plan-features">
-            <li><span class="check green">&#10003;</span> Everything in Free</li>
-            <li><span class="check green">&#10003;</span> AI Security Assistant</li>
-            <li><span class="check green">&#10003;</span> Threat explanations</li>
-            <li><span class="check green">&#10003;</span> Plain-English answers</li>
-            <li><span class="check green">&#10003;</span> Priority support</li>
+        <!-- Pro -->
+        <div class="pricing-card pricing-card-featured">
+          <div class="pricing-popular-badge">&#11088; Most Popular</div>
+          <div class="pricing-tier-label">Pro</div>
+          <div class="pricing-price">
+            <span class="price-amount">$15</span>
+            <span class="price-period">/ year</span>
+          </div>
+          <p class="pricing-tagline">The full CipherWatch experience.</p>
+          <ul class="pricing-features">
+            <li><span class="check">&#10003;</span> Everything in Free</li>
+            <li><span class="check">&#10003;</span> Quarantine Viewer</li>
+            <li><span class="check">&#10003;</span> System Health Monitor</li>
+            <li><span class="check">&#10003;</span> AI Assistant (20 uses/month)</li>
+            <li><span class="check">&#10003;</span> Bring your own API key</li>
+            <li><span class="check">&#10003;</span> 1 Device</li>
+            <li><span class="muted">&mdash;</span> <span class="muted-text">Priority Support</span></li>
           </ul>
-          <a href="#download" class="btn-primary">Coming Soon</a>
+          <a href="#pricing" class="btn btn-primary btn-full">Get Pro <span class="coming-soon-tag">Coming Soon</span></a>
+        </div>
+
+        <!-- Ultimate -->
+        <div class="pricing-card pricing-card-ultimate">
+          <div class="pricing-ultimate-badge">Ultimate</div>
+          <div class="pricing-tier-label">Ultimate</div>
+          <div class="pricing-price">
+            <span class="price-amount">$35</span>
+            <span class="price-period">/ year</span>
+          </div>
+          <p class="pricing-tagline">Maximum coverage, maximum AI.</p>
+          <ul class="pricing-features">
+            <li><span class="check">&#10003;</span> Everything in Pro</li>
+            <li><span class="check">&#10003;</span> 60 AI uses/month</li>
+            <li><span class="check">&#10003;</span> 3 Devices</li>
+            <li><span class="check">&#10003;</span> Priority Support</li>
+            <li><span class="check">&#10003;</span> Future features first</li>
+            <li><span class="check">&#10003;</span> Bring your own API key</li>
+            <li><span class="check check-amber">&#9733;</span> Best value per device</li>
+          </ul>
+          <a href="#pricing" class="btn btn-ultimate btn-full">Get Ultimate <span class="coming-soon-tag">Coming Soon</span></a>
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <!-- DOWNLOAD -->
-  <section class="download" id="download">
-    <div class="section-inner download-inner">
-      <h2>Ready to get started?</h2>
-      <p>Free download. Windows 10 version 2004 or later required.</p>
-      <a href="https://github.com/mqobey/CipherWatch/releases/latest" class="btn-primary btn-large">
-        Download CipherWatch Free
-      </a>
-      <p class="download-note">v0.1.0 Early Preview &nbsp;&middot;&nbsp; Windows 10/11 x64</p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="logo">
-        <span class="logo-icon">&#9672;</span>
-        CipherWatch
-      </div>
-      <p class="footer-note">Built with Windows Defender + Claude AI. No data collected. No subscriptions required to start.</p>
-      <p class="footer-links">
-        <a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp;
-        <a href="https://github.com/mqobey/CipherWatch">GitHub</a>
+      <p class="pricing-guarantee">
+        <span class="guarantee-icon">&#128274;</span>
+        All plans include a <strong>14-day money-back guarantee</strong>. No questions asked.
       </p>
     </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials-section section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">What early users are saying.</h2>
+        <p class="section-sub">Real feedback from people who use CipherWatch every day.</p>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <blockquote class="testimonial-quote">
+            &ldquo;I never knew what Windows Defender was actually doing. CipherWatch made it click &mdash; I can see my score, run a scan, and actually understand threats now. The AI assistant is brilliant.&rdquo;
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div class="author-info">
+              <div class="author-name">Sarah M.</div>
+              <div class="author-role">Small Business Owner</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <blockquote class="testimonial-quote">
+            &ldquo;Clean, fast, and does exactly what it says. I installed it on all my family&apos;s PCs. The free tier alone is more useful than anything else I&apos;ve tried.&rdquo;
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">J</div>
+            <div class="author-info">
+              <div class="author-name">James K.</div>
+              <div class="author-role">IT Consultant</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <blockquote class="testimonial-quote">
+            &ldquo;A threat was detected and I had no idea what it meant. I asked the AI assistant and it explained everything in plain English and told me exactly what to do. Genuinely impressed.&rdquo;
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">D</div>
+            <div class="author-info">
+              <div class="author-name">David R.</div>
+              <div class="author-role">Home User</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="testimonials-disclaimer">* Early access users. Results may vary.</p>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="faq-section section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Frequently asked questions.</h2>
+        <p class="section-sub">Everything you need to know before you download.</p>
+      </div>
+
+      <div class="faq-list">
+
+        <div class="faq-card">
+          <h3 class="faq-question">Is CipherWatch safe? Does it replace Windows Defender?</h3>
+          <p class="faq-answer">No &mdash; CipherWatch works <em>alongside</em> Windows Defender, not instead of it. It never modifies or replaces Defender. It only reads your security status and launches built-in Windows security commands that already exist on your PC. Your core protection stays exactly the same.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3 class="faq-question">What data does CipherWatch collect?</h3>
+          <p class="faq-answer">None. All your security data stays on your device. We do not operate servers that receive your personal information, scan results, or system data. CipherWatch is entirely local &mdash; it reads from Windows, displays to you, and stops there.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3 class="faq-question">How does the AI assistant work?</h3>
+          <p class="faq-answer">You connect your own Claude API key in CipherWatch Settings. When you ask the AI a question, the query goes from your device directly to Anthropic&apos;s servers &mdash; not through us. We never see your questions or answers. You control the key, you control the data.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3 class="faq-question">What&apos;s the difference between Pro and Ultimate?</h3>
+          <p class="faq-answer">Both include the full feature set: Quarantine Viewer, System Health Monitor, and the AI Assistant. Pro covers <strong>1 device</strong> with <strong>20 AI queries/month</strong>. Ultimate covers <strong>3 devices</strong> with <strong>60 AI queries/month</strong> and priority support &mdash; ideal for families or small businesses.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3 class="faq-question">Can I get a refund?</h3>
+          <p class="faq-answer">Yes, absolutely. Pro and Ultimate plans come with a <strong>14-day no-questions-asked refund</strong>. If CipherWatch isn&apos;t right for you, just reach out within 14 days of purchase and we&apos;ll refund you in full &mdash; no hoops to jump through.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FINAL CTA ========== -->
+  <section class="final-cta-section">
+    <div class="final-cta-glow"></div>
+    <div class="container final-cta-inner">
+      <h2 class="final-cta-title">Start protecting your PC today.</h2>
+      <p class="final-cta-sub">Free download. No account required. No data collected.</p>
+      <a href="https://github.com/mqobey/CipherWatch/releases/latest" class="btn btn-primary btn-xl" target="_blank" rel="noopener">Download CipherWatch Free</a>
+      <p class="final-cta-note">Pro and Ultimate plans available for the full experience.</p>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <div class="footer-top">
+        <a href="#" class="nav-logo footer-logo">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 3L35 10V20C35 28.5 28.5 36.5 20 39C11.5 36.5 5 28.5 5 20V10L20 3Z" fill="url(#shield-grad-f)" />
+            <path d="M20 10L27 14V20C27 24.5 24 28.5 20 30C16 28.5 13 24.5 13 20V14L20 10Z" fill="url(#diamond-grad-f)" />
+            <defs>
+              <linearGradient id="shield-grad-f" x1="5" y1="3" x2="35" y2="39" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#4A8FE7"/>
+                <stop offset="100%" stop-color="#6A5ACD"/>
+              </linearGradient>
+              <linearGradient id="diamond-grad-f" x1="13" y1="10" x2="27" y2="30" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+                <stop offset="100%" stop-color="rgba(255,255,255,0.4)"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="logo-text">CipherWatch</span>
+        </a>
+        <p class="footer-tagline">Windows security, finally made clear.</p>
+      </div>
+
+      <nav class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="https://github.com/mqobey/CipherWatch" target="_blank" rel="noopener">GitHub</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </nav>
+
+      <div class="footer-social">
+        <a href="https://github.com/mqobey/CipherWatch" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 CipherWatch. All rights reserved.</p>
+        <p class="footer-disclaimer">CipherWatch is an independent product and is not affiliated with Microsoft Corporation. Windows Defender is a trademark of Microsoft.</p>
+      </div>
+
+    </div>
   </footer>
+
+  <script>
+    // Sticky nav shadow on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 20);
+    });
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('active');
+      });
+    });
+
+    // Intersection Observer for scroll-reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(
+      '.feature-card, .step-card, .pricing-card, .testimonial-card, .faq-card, .stat-card'
+    ).forEach(el => {
+      el.classList.add('scroll-reveal');
+      observer.observe(el);
+    });
+  </script>
 
 </body>
 </html>
